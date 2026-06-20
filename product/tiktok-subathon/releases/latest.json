@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "releaseDate": "2026-05-29T00:00:00.000Z",
+  "releaseName": "TSubathon v1.0.0",
+  "releaseNotes": "Rilis perdana TSubathon — TikTok Coin + Saweria Subathon Integration.",
+  "files": [
+    {
+      "url": "https://leonxlab.digital/product/tiktok-subathon/releases/TSubathon-Setup-1.0.0.exe",
+      "sha512": "2+28F9iYC6z4kPDF5PjEXXsvljJVt/9pu2qoNxD1DMRL/NiJFRsVEFyQaEvvai9omPj9F+62A/dOzILKvPWBeQ==",
+      "size": 106088836
+    }
+  ],
+  "path": "https://leonxlab.digital/product/tiktok-subathon/releases/TSubathon-Setup-1.0.0.exe",
+  "sha512": "2+28F9iYC6z4kPDF5PjEXXsvljJVt/9pu2qoNxD1DMRL/NiJFRsVEFyQaEvvai9omPj9F+62A/dOzILKvPWBeQ=="
+}
