@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Halaman Tidak Ditemukan · leonxlab.digital</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:    #0f0e0c;
+      --ink2:   #2a2825;
+      --muted:  #6b6560;
+      --pale:   #f5f3ef;
+      --warm:   #ede9e3;
+      --rule:   #ddd9d2;
+      --accent: #c8400f;
+      --accent2:#1a6b5c;
+
+      --ff-head: 'Playfair Display', Georgia, serif;
+      --ff-body: 'DM Sans', sans-serif;
+      --ff-mono: 'DM Mono', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--pale);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--rule);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-family: var(--ff-head);
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .brand span { color: var(--accent); }
+    .nav-back {
+      font-family: var(--ff-mono);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--ink); }
+    .nav-back::before { content: '←'; }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    .error-wrap {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .error-code-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .error-num {
+      font-family: var(--ff-head);
+      font-size: clamp(6rem, 18vw, 10rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--ink);
+      letter-spacing: -0.04em;
+      opacity: .08;
+      user-select: none;
+    }
+
+    .error-badge {
+      font-family: var(--ff-mono);
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid #f0c4b0;
+      background: #fdf3ef;
+      padding: .3rem .8rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    .error-divider {
+      width: 40px;
+      height: 1.5px;
+      background: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .error-heading {
+      font-family: var(--ff-head);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .error-heading em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .error-body {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 46ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+
+    .btn-primary-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1.4rem;
+      background: var(--ink);
+      color: var(--pale);
+      font-family: var(--ff-body);
+      font-size: .82rem;
+      font-weight: 500;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-primary-dark:hover { background: var(--ink2); color: var(--pale); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1.4rem;
+      border: 1.5px solid var(--rule);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-size: .82rem;
+      font-weight: 500;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: border-color .2s;
+    }
+    .btn-ghost:hover { border-color: var(--ink2); color: var(--ink); }
+
+    /* ── DECORATION ── */
+    .deco-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .deco-grid-line {
+      position: absolute;
+      background: var(--rule);
+    }
+    .deco-grid-line.v { width: 1px; top: 0; bottom: 0; opacity: .5; }
+    .deco-grid-line.h { height: 1px; left: 0; right: 0; opacity: .5; }
+    .deco-grid-line:nth-child(1) { left: 20%; }
+    .deco-grid-line:nth-child(2) { left: 40%; }
+    .deco-grid-line:nth-child(3) { left: 60%; }
+    .deco-grid-line:nth-child(4) { left: 80%; }
+    .deco-grid-line:nth-child(5) { top: 30%; }
+    .deco-grid-line:nth-child(6) { top: 70%; }
+
+    .error-wrap { position: relative; z-index: 1; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .footer-mono {
+      font-family: var(--ff-mono);
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .06em;
+    }
+
+    /* ── FADE IN ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .error-wrap { animation: fadeUp .6s ease both; }
+  </style>
+</head>
+<body>
+
+<div class="deco-grid">
+  <div class="deco-grid-line v"></div>
+  <div class="deco-grid-line v"></div>
+  <div class="deco-grid-line v"></div>
+  <div class="deco-grid-line v"></div>
+  <div class="deco-grid-line h"></div>
+  <div class="deco-grid-line h"></div>
+</div>
+
+<nav>
+  <a href="/" class="brand">leonxlab<span>.</span>digital</a>
+  <a href="/" class="nav-back">Kembali ke Beranda</a>
+</nav>
+
+<main>
+  <div class="error-wrap">
+    <div class="error-code-row">
+      <span class="error-num">404</span>
+      <span class="error-badge">Halaman Tidak Ditemukan</span>
+    </div>
+    <div class="error-divider"></div>
+    <h1 class="error-heading">Halaman ini<br><em>tidak ada.</em></h1>
+    <p class="error-body">
+      URL yang Anda akses tidak ditemukan di server ini. Mungkin sudah dipindahkan, dihapus, atau belum pernah ada.
+    </p>
+    <div class="error-actions">
+      <a href="/" class="btn-primary-dark">Kembali ke Beranda</a>
+      <a href="/#contact" class="btn-ghost">Hubungi Saya</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-mono">leonxlab.digital</span>
+  <span class="footer-mono">HTTP 404 — Not Found</span>
+</footer>
+
+</body>
+</html>

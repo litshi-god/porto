@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>502 — Bad Gateway · leonxlab.digital</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:    #0f0e0c;
+      --ink2:   #2a2825;
+      --muted:  #6b6560;
+      --pale:   #f5f3ef;
+      --warm:   #ede9e3;
+      --rule:   #ddd9d2;
+      --accent: #c8400f;
+      --accent2:#1a6b5c;
+
+      --ff-head: 'Playfair Display', Georgia, serif;
+      --ff-body: 'DM Sans', sans-serif;
+      --ff-mono: 'DM Mono', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--ink);
+      color: var(--pale);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid #1e1c1a;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-family: var(--ff-head);
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--pale);
+      text-decoration: none;
+    }
+    .brand span { color: var(--accent); }
+    .nav-back {
+      font-family: var(--ff-mono);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      color: #6a6360;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: #9a938c; }
+    .nav-back::before { content: '←'; }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    .error-wrap {
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp .6s ease both;
+    }
+
+    .error-code-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .error-num {
+      font-family: var(--ff-head);
+      font-size: clamp(6rem, 18vw, 10rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--pale);
+      opacity: .06;
+      user-select: none;
+    }
+
+    .error-badge {
+      font-family: var(--ff-mono);
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid #3a2010;
+      background: #1e1008;
+      padding: .3rem .8rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    .error-divider {
+      width: 40px;
+      height: 1.5px;
+      background: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .error-heading {
+      font-family: var(--ff-head);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .error-heading em {
+      font-style: italic;
+      color: #a09080;
+    }
+
+    .error-body {
+      font-size: .9rem;
+      color: #9a938c;
+      line-height: 1.75;
+      max-width: 48ch;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── STATUS INDICATOR ── */
+    .status-block {
+      border: 1px solid #1e1c1a;
+      border-radius: 3px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #0c0b09;
+    }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      animation: blink 1.6s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+    .status-text {
+      font-family: var(--ff-mono);
+      font-size: .72rem;
+      color: #6a6360;
+      letter-spacing: .04em;
+    }
+    .status-text strong {
+      color: #9a938c;
+      font-weight: 500;
+    }
+
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+
+    .btn-primary-pale {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1.4rem;
+      background: var(--pale);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-size: .82rem;
+      font-weight: 500;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-primary-pale:hover { background: #e0dcd6; color: var(--ink); }
+
+    .btn-ghost-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1.4rem;
+      border: 1.5px solid #2a2825;
+      color: #d8d2ca;
+      font-family: var(--ff-body);
+      font-size: .82rem;
+      font-weight: 500;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: border-color .2s;
+    }
+    .btn-ghost-dark:hover { border-color: #4a4642; color: var(--pale); }
+
+    /* ── DECORATION ── */
+    .deco-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .deco-grid-line {
+      position: absolute;
+      background: #1a1815;
+    }
+    .deco-grid-line.v { width: 1px; top: 0; bottom: 0; }
+    .deco-grid-line.h { height: 1px; left: 0; right: 0; }
+    .deco-grid-line:nth-child(1) { left: 20%; }
+    .deco-grid-line:nth-child(2) { left: 40%; }
+    .deco-grid-line:nth-child(3) { left: 60%; }
+    .deco-grid-line:nth-child(4) { left: 80%; }
+    .deco-grid-line:nth-child(5) { top: 30%; }
+    .deco-grid-line:nth-child(6) { top: 70%; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid #1e1c1a;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .footer-mono {
+      font-family: var(--ff-mono);
+      font-size: .68rem;
+      color: #3a3835;
+      letter-spacing: .06em;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="deco-grid">
+  <div class="deco-grid-line v"></div>
+  <div class="deco-grid-line v"></div>
+  <div class="deco-grid-line v"></div>
+  <div class="deco-grid-line v"></div>
+  <div class="deco-grid-line h"></div>
+  <div class="deco-grid-line h"></div>
+</div>
+
+<nav>
+  <a href="/" class="brand">leonxlab<span>.</span>digital</a>
+  <a href="/" class="nav-back">Kembali ke Beranda</a>
+</nav>
+
+<main>
+  <div class="error-wrap">
+    <div class="error-code-row">
+      <span class="error-num">502</span>
+      <span class="error-badge">Bad Gateway</span>
+    </div>
+    <div class="error-divider"></div>
+    <h1 class="error-heading">Server sedang<br><em>tidak merespons.</em></h1>
+    <p class="error-body">
+      Gateway menerima respons yang tidak valid dari server upstream. Ini biasanya masalah sementara — coba lagi dalam beberapa saat.
+    </p>
+
+    <div class="status-block">
+      <div class="status-dot"></div>
+      <div class="status-text"><strong>leonxlab.digital</strong> — upstream tidak merespons saat ini</div>
+    </div>
+
+    <div class="error-actions">
+      <a href="/" class="btn-primary-pale">Coba Lagi</a>
+      <a href="mailto:business@leonxlab.digital" class="btn-ghost-dark">Laporkan Masalah</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-mono">leonxlab.digital</span>
+  <span class="footer-mono">HTTP 502 — Bad Gateway</span>
+</footer>
+
+</body>
+</html>

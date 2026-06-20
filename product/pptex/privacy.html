@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kebijakan Privasi — PPTEX</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i data-lucide="presentation"></i>
+        PPTEX
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#fitur">Fitur</a></li>
+        <li><a href="index.html#cara-kerja">Cara Kerja</a></li>
+        <li><a href="index.html#download" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 8px;">Unduh Sekarang</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container">
+      <div class="content-wrapper">
+        <h1>Kebijakan Privasi PPTEX</h1>
+        <div class="content-text">
+          <p>Terakhir Diperbarui: 20 Mei 2026</p>
+          
+          <p>Privasi Anda adalah prioritas utama kami. Aplikasi PPTEX dirancang dengan prinsip dasar bahwa data dan informasi Anda sepenuhnya adalah milik Anda. Kebijakan ini menjelaskan bagaimana kami memperlakukan data Anda saat Anda menggunakan aplikasi desktop PPTEX.</p>
+
+          <h2>1. Data yang Dikumpulkan</h2>
+          <p>PPTEX adalah aplikasi berbasis lokal. Kami tidak mengumpulkan, menyimpan, atau mentransmisikan data pribadi Anda ke server kami. Tidak ada mekanisme pendaftaran akun, analitik perilaku, atau pelacakan telemetri pengguna di dalam aplikasi.</p>
+
+          <h2>2. Pengolahan Dokumen Lokal</h2>
+          <p>Saat Anda mengunggah berkas PDF atau DOCX untuk dikonversi menjadi slide:</p>
+          <ul>
+            <li>Ekstraksi teks dan gambar dilakukan sepenuhnya secara lokal di komputer Anda.</li>
+            <li>Konten dokumen Anda dikirimkan langsung ke penyedia layanan AI (OpenAI/Groq) melalui API aman untuk memproses outline presentasi.</li>
+            <li>Konten dokumen atau slide Anda tidak pernah dikirim ke LeonXLab atau disimpan di infrastruktur server pihak kami.</li>
+          </ul>
+
+          <h2>3. Keamanan API Key</h2>
+          <p>Aplikasi ini dilengkapi dengan API Key bawaan yang digunakan untuk memproses perintah presentasi. API Key ini dienkripsi dengan metode enkripsi AES-256-CBC pada level biner aplikasi dan didekripsi langsung di memori komputer Anda saat runtime. API Key ini tidak pernah dikirim ke pihak ketiga selain endpoint API OpenAI dan Groq resmi.</p>
+
+          <h2>4. Berkas Log</h2>
+          <p>Untuk kebutuhan debug dan pemecahan masalah teknis, aplikasi mencatat aktivitas pembuatan presentasi di dalam berkas log lokal di perangkat Anda. Berkas log ini disimpan di folder data aplikasi pengguna (AppData/Roaming pada Windows). Berkas log ini bersifat lokal dan tidak akan pernah dikirimkan ke server kami kecuali jika Anda secara sukarela mengirimkannya untuk kepentingan bantuan teknis.</p>
+
+          <h2>5. Kontak Kami</h2>
+          <p>Apabila Anda memiliki pertanyaan seputar Kebijakan Privasi ini atau pengelolaan data di dalam PPTEX, silakan hubungi kami di:</p>
+          <p>Email: <a href="mailto:support@leonxlab.digital" style="color: var(--primary); font-weight: 600;">support@leonxlab.digital</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>Copyright © 2026 PPTEX. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="privacy.html" style="color: var(--text);">Kebijakan Privasi</a></li>
+        <li><a href="tos.html">Syarat & Ketentuan</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
