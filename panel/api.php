@@ -54,7 +54,7 @@ if ($action === 'login') {
 // AUTH CHECK
 // ==========================
 if (!$user) {
-    res(['status'=>false,'msg'=>'Unauthenticated','redirect'=>'/?page=login'], 401);
+    res(['status'=>false,'msg'=>'Unauthenticated','redirect'=>'/admin'], 401);
 }
 
 // ==========================

@@ -244,6 +244,9 @@ tr:hover .actions{opacity:1}
     <button class="nav-btn" onclick="showPage('databases')" data-page="databases">
       <svg viewBox="0 0 16 16" fill="currentColor"><ellipse cx="8" cy="4" rx="6" ry="2.5"/><path d="M2 4v2c0 1.38 2.686 2.5 6 2.5S14 7.38 14 6V4M2 8v2c0 1.38 2.686 2.5 6 2.5S14 11.38 14 10V8M2 12v2c0 1.38 2.686 2.5 6 2.5S14 15.38 14 14v-2"/></svg>Database
     </button>
+    <button class="nav-btn" onclick="showPage('documentation')" data-page="documentation">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5A1.5 1.5 0 014.5 0h6A1.5 1.5 0 0112 1.5v13a1.5 1.5 0 01-1.5 1.5h-6A1.5 1.5 0 013 14.5v-13zM5 4h5v1H5V4zm0 3h5v1H5V7zm0 3h3v1H5v-1z"/></svg>Documentation
+    </button>
     <button class="nav-btn" id="nav-users" onclick="showPage('users')" data-page="users" style="display:none">
       <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM3 14a5 5 0 0110 0H3z"/></svg>Users
     </button>
@@ -523,6 +526,7 @@ function showPage(name) {
   else if (name==='files') { showPage2('files'); fmLoad(); }
   else if (name==='sites') { showPage2('sites'); loadSites(); }
   else if (name==='databases') { showPage2('databases'); loadDbs(); }
+  else if (name==='documentation') openDocumentation();
   else if (name==='users') { showPage2('users'); loadUsers(); }
   else if (name==='logs') { showPage2('logs'); loadLogs(); }
 }
@@ -726,6 +730,24 @@ function fmBack() {
 }
 
 function fmRefresh() { fmLoad(); }
+
+async function openDocumentation() {
+  const docsPath = '/www/wwwroot/documentation';
+  S.fm.history = [];
+  S.fm.path = docsPath;
+  showPage2('files');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('[data-page="documentation"]')?.classList.add('active');
+  const r = await api('file.list', {path: docsPath, p: 1, search: ''}, 'GET');
+  if (!r.status) {
+    const created = await api('file.mkdir', {path: docsPath});
+    if (created.status === false) {
+      toast('Folder documentation tidak dapat dibuat: ' + (created.msg || r.msg), 'error');
+      return;
+    }
+  }
+  fmLoad(docsPath);
+}
 
 function updateSel(el) {
   if (el.checked) S.fm.selected.push(el.value);

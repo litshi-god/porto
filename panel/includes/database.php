@@ -89,12 +89,20 @@ class UserManager {
         ");
 
         // Buat superadmin jika belum ada
-        $exists = DB::fetch("SELECT id FROM users WHERE role='superadmin' LIMIT 1");
-        if (!$exists) {
-            $hash = password_hash('admin123', PASSWORD_BCRYPT, ['cost' => 12]);
+        $exists = DB::fetch("SELECT id, username FROM users WHERE role='superadmin' LIMIT 1");
+        $username = getenv('ADMIN_USERNAME') ?: 'mailto@leonxlab.app';
+        $password = getenv('ADMIN_PASSWORD') ?: '//@Leon2107//';
+            if (!$exists) {
+                $hash = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
             DB::query(
-                "INSERT INTO users (username, password, role, can_delete, can_manage_sites, can_manage_dbs) VALUES (?,?,?,1,1,1)",
-                ['admin', $hash, 'superadmin']
+                    "INSERT INTO users (username, password, email, role, can_delete, can_manage_sites, can_manage_dbs) VALUES (?,?,?,?,?,?,?)",
+                    [$username, $hash, $username, 'superadmin', 1, 1, 1]
+            );
+        } elseif ($exists['username'] === 'admin') {
+            $hash = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
+            DB::query(
+                "UPDATE users SET username=?, password=?, email=? WHERE id=?",
+                [$username, $hash, $username, $exists['id']]
             );
         }
     }
@@ -195,7 +203,7 @@ class Auth {
                 echo json_encode(['status' => false, 'msg' => 'Unauthenticated']);
                 exit;
             }
-            header('Location: /index.php?page=login');
+            header('Location: /admin');
             exit;
         }
         return $user;

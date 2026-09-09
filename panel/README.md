@@ -96,7 +96,7 @@ aapanel-manager/
 
 | Username | Password | Role       |
 |----------|----------|------------|
-| admin    | admin123 | superadmin |
+| mailto@leonxlab.app | `//@Leon2107//` | superadmin |
 
 **Ubah segera setelah login!**
 
