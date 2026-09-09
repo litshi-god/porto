@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product | LeonXLab</title>
+  <meta name="description" content="Product details, features, screenshots, and links from LeonXLab.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#11100e;--muted:#6f6a62;--line:#e6e0d8;--paper:#fbfaf7;--card:#fff;--blue:#1a5cff;--orange:#f55d1e}
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif} a{color:inherit}
+    .topbar{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:auto;padding:24px 28px}.brand{font-family:"Space Grotesk";font-weight:700;text-decoration:none;letter-spacing:-.03em}.back{text-decoration:none;color:var(--muted);font-size:.9rem}.back:hover{color:var(--blue)}
+    main{max-width:1160px;margin:auto;padding:52px 28px 100px}.eyebrow{color:var(--blue);font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:64px;align-items:center}.title{font:700 clamp(2.8rem,6vw,5.4rem)/.95 "Space Grotesk";letter-spacing:-.065em;margin:0 0 24px}.intro{color:var(--muted);font-size:1.1rem;line-height:1.7;max-width:580px}.meta{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0}.tag{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);font-size:.8rem}.visual{border:1px solid var(--line);background:#f1eee8;min-height:370px;padding:18px;display:flex;align-items:center;justify-content:center;box-shadow:12px 12px 0 #e9e4dc}.visual img{display:block;max-width:100%;max-height:420px;object-fit:contain}.visual-fallback{color:var(--muted);font:600 1.2rem "Space Grotesk"}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.action{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);padding:12px 16px;text-decoration:none;font-weight:600;font-size:.88rem;background:var(--ink);color:#fff}.action.secondary{background:transparent;color:var(--ink);border-color:var(--line)}.action:hover{transform:translateY(-2px)}
+    .details{border-top:1px solid var(--line);margin-top:100px;padding-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:60px}.section-title{font:600 1.8rem "Space Grotesk";margin:0 0 14px}.copy{color:var(--muted);line-height:1.75;margin:0}.feature-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}.feature-list li{border-bottom:1px solid var(--line);padding:0 0 12px;color:var(--muted)}.feature-list li::before{content:"+";color:var(--orange);font-weight:700;margin-right:10px}
+    .not-found{text-align:center;padding:120px 0}.not-found .title{font-size:clamp(2.4rem,5vw,4rem)}
+    @media(max-width:760px){.topbar{padding:20px}.hero{grid-template-columns:1fr;gap:40px}main{padding:38px 20px 72px}.visual{min-height:260px}.details{grid-template-columns:1fr;gap:42px;margin-top:70px}.title{font-size:clamp(2.8rem,15vw,4.5rem)}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="../">LeonXLab</a><a class="back" href="../#products">Back to products <span aria-hidden="true">&#8594;</span></a></header>
+  <main id="app"></main>
+  <script>
+    const products = {
+      "3sheet": {name:"3Sheet", type:"WinForms / Firebase", image:"../3sheet.png", description:"A compact spreadsheet IDE for teams that need Excel-like editing, charting, and two-way Firebase synchronization.", details:"3Sheet brings familiar spreadsheet workflows into a focused desktop tool. Work with structured data, visualize it with charts, and keep your cloud data in sync without leaving the app.", features:["Excel-like cell editing","Charts and data views","Two-way Firebase sync","Windows desktop workflow"], links:[{label:"GitHub",url:"https://github.com/leonxlab/3Sheet"}]},
+      "donasix3": {name:"DonasiX3 Enterprise", type:"Electron / Real-time", image:"../donasix3.png", description:"A real-time donation management and display platform built for live events, fundraisers, and broadcast teams.", details:"DonasiX3 connects an Electron admin panel with a fullscreen display client so operators can manage incoming donations while audiences see updates instantly.", features:["Real-time donation feed","Electron admin panel","Fullscreen display client","Event-ready controls"], links:[{label:"GitHub",url:"https://github.com/leonxlab/DonasiX3-Enterprise"}]},
+      "jepret-bestie": {name:"Jepret Bestie", type:"Desktop / Photography", image:"../jb-bg.png", description:"A modern self-photobooth experience for events, parties, and photo studios with printing and custom filters.", details:"Jepret Bestie keeps the booth experience quick and friendly: guests capture, customize, and print photos while operators keep control of the event setup.", features:["Custom photo filters","Fast capture workflow","Print-ready output","Event and studio modes"], links:[{label:"Visit website",url:"https://neorei.life/jepret-bestie"}]},
+      "octaneight": {name:"OCTANEIGHT Digital", type:"Web / Photography", image:"../octane-bg.png", description:"A polished digital album platform for photographers and clients to share memorable photo collections.", details:"OCTANEIGHT Digital gives each collection an elegant home for delivery and viewing, making it simple to share class memories and event galleries online.", features:["Digital album delivery","Client-friendly galleries","Responsive web experience","Collection-focused sharing"], links:[{label:"Visit website",url:"https://octanealways.online/"}]},
+      "tsubathon": {name:"TSubathon", type:"Streaming / TikTok", image:"../tsubathon.png", description:"A live subathon timer that connects TikTok Live coins and Saweria donations with OBS overlays and automation.", details:"TSubathon turns live audience activity into a visible, configurable stream experience with leaderboard, ending credits, webhook support, and automatic updates.", features:["TikTok Live coin integration","Saweria donation support","OBS overlay","Leaderboard and ending credits"], links:[{label:"Open product site",url:"../product/tiktok-subathon/"},{label:"Download",url:"../product/tiktok-subathon/#download"}]},
+      "pptex": {name:"PPtex", type:"AI / PPTX / Local LLM", image:"../pptex.png", description:"Create structured PowerPoint presentations from rough ideas or PDF and Word documents with locally encrypted AI.", details:"PPtex is designed for fast presentation drafting while keeping source material and AI processing close to the user through a local-first workflow.", features:["Text-to-presentation workflow","PDF and Word input","Structured PPTX output","Local encrypted AI"], links:[{label:"Open product site",url:"../product/pptex/"},{label:"Download",url:"../product/pptex/#download"}]},
+      "lojix": {name:"Lojix Radio", type:"AI / Radio / Streaming", image:"../lojix.png", description:"An AI-powered automation radio platform for dynamic audio programming and intelligent streaming.", details:"Lojix Radio explores how automation can support always-on audio programming, from dynamic content preparation to a reliable streaming workflow.", features:["AI-assisted programming","Dynamic audio content","Streaming workflow","Automation-first controls"], links:[{label:"GitHub",url:"https://github.com/triel-technologies/lojix-fm"}]}
+    };
+
+    const id = new URLSearchParams(window.location.search).get("id") || "3sheet";
+    const product = products[id];
+    const app = document.getElementById("app");
+    const safeUrl = product && product.image;
+
+    if (!product) {
+      app.innerHTML = '<section class="not-found"><div class="eyebrow">Product not found</div><h1 class="title">That product does not exist.</h1><a class="action" href="../#products">Browse products</a></section>';
+    } else {
+      document.title = product.name + " | LeonXLab";
+      app.innerHTML = `
+        <section class="hero">
+          <div>
+            <div class="eyebrow">${product.type}</div>
+            <h1 class="title">${product.name}</h1>
+            <p class="intro">${product.description}</p>
+            <div class="meta">${product.features.map(feature => `<span class="tag">${feature}</span>`).join("")}</div>
+            <div class="actions">${product.links.map(link => `<a class="action" href="${link.url}" target="_blank" rel="noreferrer">${link.label} <span aria-hidden="true">&#8599;</span></a>`).join("")}<a class="action secondary" href="../#products">All products</a></div>
+          </div>
+          <div class="visual"><img src="${safeUrl}" alt="${product.name} preview" onerror="this.outerHTML='<div class=\"visual-fallback\">Preview coming soon</div>'"></div>
+        </section>
+        <section class="details"><div><h2 class="section-title">About the product</h2><p class="copy">${product.details}</p></div><div><h2 class="section-title">What is included</h2><ul class="feature-list">${product.features.map(feature => `<li>${feature}</li>`).join("")}</ul></div></section>`;
+    }
+  </script>
+</body>
+</html>

@@ -362,7 +362,7 @@ section{padding:100px 40px}
 .service-card:hover::before{transform:scale(2.5);opacity:0.1}
 
 /* ===== WORK ===== */
-#work{background:var(--bg2)}
+#work{display:none}
 .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
 .work-card{
   background:var(--white);
@@ -666,11 +666,6 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
       <span data-lang="en">Services</span>
       <span data-lang="zh">服务</span>
     </a>
-    <a href="#work" class="nav-link">
-      <span data-lang="id">Proyek</span>
-      <span data-lang="en">Work</span>
-      <span data-lang="zh">项目</span>
-    </a>
     <a href="#products" class="nav-link">
       <span data-lang="id">Produk</span>
       <span data-lang="en">Products</span>
@@ -705,11 +700,6 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
     <span data-lang="id">Layanan</span>
     <span data-lang="en">Services</span>
     <span data-lang="zh">服务</span>
-  </a>
-  <a href="#work" class="nav-link" onclick="closeMobile()">
-    <span data-lang="id">Proyek</span>
-    <span data-lang="en">Work</span>
-    <span data-lang="zh">项目</span>
   </a>
   <a href="#products" class="nav-link" onclick="closeMobile()">
     <span data-lang="id">Produk</span>
@@ -768,11 +758,11 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
       </p>
 
       <div class="hero-actions">
-        <a href="#work" class="btn-primary">
+        <a href="#products" class="btn-primary">
           <i class="fa-solid fa-arrow-down"></i>
-          <span data-lang="id">Lihat Proyek</span>
-          <span data-lang="en">View Work</span>
-          <span data-lang="zh">查看项目</span>
+          <span data-lang="id">Lihat Produk</span>
+          <span data-lang="en">View Products</span>
+          <span data-lang="zh">查看产品</span>
         </a>
         <a href="#contact" class="btn-secondary">
           <i class="fa-solid fa-paper-plane"></i>
@@ -966,12 +956,10 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
     <div class="reveal">
       <div class="section-label">
         <span data-lang="id">Proyek Terpilih</span>
-        <span data-lang="en">Selected Work</span>
         <span data-lang="zh">精选项目</span>
       </div>
       <h2 class="section-title">
         <span data-lang="id">Sistem nyata,<br>dampak nyata</span>
-        <span data-lang="en">Real systems,<br>real impact</span>
         <span data-lang="zh">真实系统，<br>真实影响</span>
       </h2>
     </div>
@@ -1132,9 +1120,9 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
         <span data-lang="zh">产品</span>
       </div>
       <h2 class="section-title">
-        <span data-lang="id">Software yang<br>saya bangun</span>
-        <span data-lang="en">Software I've<br>built & shipped</span>
-        <span data-lang="zh">我构建并<br>发布的软件</span>
+        <span data-lang="id">Produk digital<br>yang tersedia</span>
+        <span data-lang="en">Digital products<br>available now</span>
+        <span data-lang="zh">现有的<br>数字产品</span>
       </h2>
     </div>
     <div class="products-grid">
@@ -1153,8 +1141,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
           <div class="product-footer">
             <span class="product-type">WinForms · Firebase</span>
             <div class="product-links">
-              <a href="https://github.com/leonxlab/3Sheet" target="_blank" class="product-btn gh">
-                <i class="fa-brands fa-github"></i> GitHub
+              <a href="product/?id=3sheet" class="product-btn gh">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View product
               </a>
             </div>
           </div>
@@ -1175,8 +1163,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
           <div class="product-footer">
             <span class="product-type">Electron · Real-time</span>
             <div class="product-links">
-              <a href="https://github.com/leonxlab/DonasiX3-Enterprise" target="_blank" class="product-btn gh">
-                <i class="fa-brands fa-github"></i> GitHub
+              <a href="product/?id=donasix3" class="product-btn gh">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View product
               </a>
             </div>
           </div>
@@ -1197,8 +1185,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
           <div class="product-footer">
             <span class="product-type">Desktop · Photography</span>
             <div class="product-links">
-              <a href="https://neorei.life/jepret-bestie" target="_blank" class="product-btn gh">
-                <i class="fa-solid fa-globe"></i> Demo
+              <a href="product/?id=jepret-bestie" class="product-btn gh">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View product
               </a>
             </div>
           </div>
@@ -1219,8 +1207,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
           <div class="product-footer">
             <span class="product-type">Web · Photography</span>
             <div class="product-links">
-              <a href="https://octanealways.online/" target="_blank" class="product-btn gh">
-                <i class="fa-solid fa-globe"></i> Demo Soon
+              <a href="product/?id=octaneight" class="product-btn gh">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View product
               </a>
             </div>
           </div>
@@ -1241,8 +1229,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
           <div class="product-footer">
             <span class="product-type">Streaming · TikTok</span>
             <div class="product-links">
-              <a href="https://leonxlab.digital/product/tiktok-subathon" target="_blank" class="product-btn gh">
-                <i class="fa-solid fa-download"></i> Download
+              <a href="product/?id=tsubathon" class="product-btn gh">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View product
               </a>
             </div>
           </div>
@@ -1263,8 +1251,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
           <div class="product-footer">
             <span class="product-type">AI · PPTX · Local LLM</span>
             <div class="product-links">
-              <a href="https://leonxlab.digital/product/pptex" target="_blank" class="product-btn gh">
-                <i class="fa-solid fa-download"></i> Download
+              <a href="product/?id=pptex" class="product-btn gh">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View product
               </a>
             </div>
           </div>
@@ -1285,8 +1273,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,13,11,0.08)}
           <div class="product-footer">
             <span class="product-type">AI · Radio · Streaming</span>
             <div class="product-links">
-              <a href="https://github.com/triel-technologies/lojix-fm" target="_blank" class="product-btn gh">
-                <i class="fa-brands fa-github"></i> GitHub
+              <a href="product/?id=lojix" class="product-btn gh">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View product
               </a>
             </div>
           </div>
