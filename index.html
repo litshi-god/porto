@@ -572,6 +572,38 @@ img.platform-logo{object-fit:cover;background:var(--dark)}
 .product-cta-title{font-family:var(--font-display);font-size:1.2rem;font-weight:700;letter-spacing:-0.02em;color:var(--ink)}
 .product-cta-desc{font-size:0.88rem;color:var(--ink3);line-height:1.6;margin-bottom:8px}
 
+/* ===== FABIOLA (produk unggulan + filosofi) ===== */
+.product-aka{
+  display:inline-block;margin-left:8px;
+  font-family:var(--font-mono);font-size:0.68rem;font-weight:500;letter-spacing:0;
+  color:var(--ink3);background:var(--bg);border:1px solid var(--line);
+  padding:2px 8px;border-radius:999px;vertical-align:middle;
+}
+.product-tags{margin:-4px 0 16px}
+.product-philosophy-btn{
+  background:none;border:none;cursor:pointer;padding:0;
+  font-family:inherit;color:var(--orange);
+}
+.product-philosophy-btn:hover{color:var(--blue)}
+.product-philosophy-btn[aria-expanded="true"] i{transform:rotate(-12deg)}
+.product-philosophy-btn i{transition:transform .25s}
+.philosophy{
+  margin:2px 0 14px;padding:16px 18px;
+  background:var(--orange-soft);border-left:3px solid var(--orange);
+  border-radius:0 12px 12px 0;
+  font-size:0.84rem;line-height:1.7;color:var(--ink2);
+  animation:philoIn .35s ease;
+}
+.philosophy[hidden]{display:none}
+.philosophy p + p{margin-top:10px}
+.philosophy-title{
+  display:flex;align-items:center;gap:8px;margin-bottom:8px;
+  font-family:var(--font-display);font-size:0.95rem;font-weight:700;color:var(--ink);
+}
+.philosophy-title i{color:var(--orange);font-size:0.85rem}
+.philosophy-link{color:var(--ink3)}
+@keyframes philoIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
 /* ===== TIMELINE ===== */
 #timeline{background:var(--bg2)}
 .timeline-layout{
@@ -1244,9 +1276,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
                   <span data-lang="id">Toko lisensi</span><span data-lang="en">License store</span><span data-lang="zh">许可证商店</span>
                 </strong>
                 <small>
-                  <span data-lang="id">Lisensi DonasiX3 tersedia langsung, lengkap dengan riwayat pesanan.</span>
-                  <span data-lang="en">DonasiX3 licenses available directly, with order history.</span>
-                  <span data-lang="zh">可直接购买DonasiX3许可证，并查看订单记录。</span>
+                  <span data-lang="id">Lisensi Fabiola tersedia langsung, lengkap dengan riwayat pesanan.</span>
+                  <span data-lang="en">Fabiola licenses available directly, with order history.</span>
+                  <span data-lang="zh">可直接购买Fabiola许可证，并查看订单记录。</span>
                 </small>
               </div>
             </li>
@@ -1347,21 +1379,74 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
     <div class="products-grid">
 
-      <article class="card product-card product-featured reveal">
+      <!-- FABIOLA (dahulu DonasiX3) -->
+      <article class="card product-card product-featured reveal" id="fabiola">
         <div class="product-thumb">
-          <img src="donasix3.png" alt="DonasiX3" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'product-thumb-placeholder\'><i class=\'fa-solid fa-hand-holding-heart\' style=\'color:var(--orange)\'></i></div>'">
+          <img src="fabiola.png" alt="Fabiola" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'product-thumb-placeholder\'><i class=\'fa-solid fa-hand-holding-heart\' style=\'color:var(--orange)\'></i></div>'">
         </div>
         <div class="product-body">
-          <div class="product-type">Electron · Real-time</div>
-          <div class="product-name">DonasiX3 Enterprise</div>
-          <div class="product-desc">
-            <span data-lang="id">Platform manajemen &amp; display donasi real-time dengan Electron Admin Panel dan display client layar penuh.</span>
-            <span data-lang="en">Real-time donation management &amp; display platform with Electron Admin Panel and fullscreen client display.</span>
-            <span data-lang="zh">实时捐款管理与展示平台，配备Electron管理面板和全屏客户端显示。</span>
+          <div class="product-type">Electron · Real-time · Licensed</div>
+          <div class="product-name">
+            Fabiola
+            <span class="product-aka">
+              <span data-lang="id">dahulu DonasiX3</span>
+              <span data-lang="en">formerly DonasiX3</span>
+              <span data-lang="zh">前身 DonasiX3</span>
+            </span>
           </div>
+
+          <div class="product-desc">
+            <span data-lang="id">Platform manajemen &amp; display donasi real-time yang kini sepenuhnya dinamis: tampilan, kampanye, dan alur dirancang sesuai kebutuhan Anda. Setiap pelanggan memakai lisensi sendiri, sehingga data terisolasi dan tidak pernah bentrok dengan pengguna lain.</span>
+            <span data-lang="en">A real-time donation management &amp; display platform, now fully dynamic: layouts, campaigns, and workflows are tailored to your needs. Every customer runs on their own license, so data stays isolated and never collides with other users.</span>
+            <span data-lang="zh">实时捐款管理与展示平台，现已全面动态化：界面、活动和流程均可按您的需求定制。每位客户使用独立许可证，数据相互隔离，绝不与其他用户冲突。</span>
+          </div>
+
+          <div class="tags product-tags">
+            <span class="tag">
+              <span data-lang="id">Konfigurasi dinamis</span><span data-lang="en">Dynamic config</span><span data-lang="zh">动态配置</span>
+            </span>
+            <span class="tag">
+              <span data-lang="id">Berbasis lisensi</span><span data-lang="en">License-based</span><span data-lang="zh">基于许可证</span>
+            </span>
+            <span class="tag">
+              <span data-lang="id">Data terisolasi</span><span data-lang="en">Isolated data</span><span data-lang="zh">数据隔离</span>
+            </span>
+            <span class="tag">Electron</span>
+          </div>
+
+          <!-- Panel filosofi -->
+          <div class="philosophy" id="fabiolaPhilosophy" hidden>
+            <div class="philosophy-title">
+              <i class="fa-solid fa-landmark"></i>
+              <span data-lang="id">Mengapa “Fabiola”?</span>
+              <span data-lang="en">Why “Fabiola”?</span>
+              <span data-lang="zh">为什么叫“Fabiola”？</span>
+            </div>
+            <p>
+              <span data-lang="id">Nama ini diambil dari Santa Fabiola dari Roma, bangsawan Romawi abad ke-4 yang menjual seluruh harta dan tanahnya demi orang yang membutuhkan. Sekitar tahun 390 M, ia mendirikan nosocomium, rumah sakit umum pertama di dunia Barat yang merawat orang miskin secara cuma-cuma. Ia tidak berhenti sebagai donatur: ia turun ke jalan, mencari orang sakit yang telantar, dan merawat luka mereka dengan tangannya sendiri. Bersama Santo Pammachius, ia juga mendirikan xenodochium, rumah singgah bagi para peziarah dan orang miskin di Portus.</span>
+              <span data-lang="en">The name comes from Saint Fabiola of Rome, a 4th-century Roman noblewoman who sold all her property and wealth for those in need. Around 390 AD she founded a nosocomium, the first public hospital in the Western world, treating the poor free of charge. She never stayed a distant donor: she walked the streets, sought out abandoned sick people, and tended their wounds with her own hands. With Saint Pammachius she also founded a xenodochium, a hospice for pilgrims and the poor at Portus.</span>
+              <span data-lang="zh">此名取自罗马的圣法比奥拉，一位4世纪的罗马贵族女性，她变卖全部财产与土地以帮助有需要的人。约公元390年，她创办了 nosocomium，即西方世界第一所免费救治穷人的公立医院。她从不只是远处的捐助者：她亲自走上街头，寻找被遗弃的病人，并亲手为他们包扎伤口。她还与圣帕马基乌斯一同在波尔图斯建立了 xenodochium，为朝圣者和穷人提供收容。</span>
+            </p>
+            <p class="philosophy-link">
+              <span data-lang="id">Kami membawa semangat yang sama ke dalam aplikasi ini: memberi secara total, membangun infrastruktur yang melayani semua orang, dan hadir langsung untuk kebutuhan nyata. Donasi bukan sekadar angka di layar, tetapi tindakan yang harus tercatat rapi, aman, dan sampai ke tujuannya. Karena itu setiap lembaga mendapat “rumahnya” sendiri lewat lisensi yang terpisah.</span>
+              <span data-lang="en">We carry that same spirit into this app: giving fully, building infrastructure that serves everyone, and showing up for real needs. A donation is more than a number on a screen; it is an act that must be recorded cleanly, kept safe, and reach its destination. That is why every organization gets its own “house” through a separate license.</span>
+              <span data-lang="zh">我们将同样的精神带入这款应用：全心给予，建设服务所有人的基础设施，并真正回应现实需求。捐款不只是屏幕上的数字，而是一种必须被清晰记录、安全保管并抵达目的地的行动。因此，每个机构都通过独立许可证拥有属于自己的“家”。</span>
+            </p>
+          </div>
+
           <div class="product-footer">
-            <a class="product-link" href="product/donasix3/"><span data-lang="id">Dokumentasi</span><span data-lang="en">Docs</span><span data-lang="zh">文档</span> <i class="fa-solid fa-arrow-right"></i></a>
-            <a class="product-link buy" href="https://leonxlab.app/products/donasix3" target="_blank" rel="noopener"><span data-lang="id">Beli lisensi</span><span data-lang="en">Buy license</span><span data-lang="zh">购买许可</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <a class="product-link" href="product/donasix3/">
+              <span data-lang="id">Dokumentasi</span><span data-lang="en">Docs</span><span data-lang="zh">文档</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <button type="button" class="product-link product-philosophy-btn" id="fabiolaPhilosophyBtn" aria-expanded="false" aria-controls="fabiolaPhilosophy">
+              <i class="fa-solid fa-feather-pointed"></i>
+              <span data-lang="id">Filosofi</span><span data-lang="en">Philosophy</span><span data-lang="zh">理念</span>
+            </button>
+            <a class="product-link buy" href="https://leonxlab.app/products/fabiola" target="_blank" rel="noopener">
+              <span data-lang="id">Beli lisensi</span><span data-lang="en">Buy license</span><span data-lang="zh">购买许可</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
         </div>
       </article>
@@ -1875,6 +1960,18 @@ window.addEventListener('mousemove', (e) => {
     orb.style.translate = `${x * factor}px ${y * factor}px`;
   });
 });
+
+// ===== FABIOLA PHILOSOPHY TOGGLE =====
+(function () {
+  const btn = document.getElementById('fabiolaPhilosophyBtn');
+  const panel = document.getElementById('fabiolaPhilosophy');
+  if (!btn || !panel) return;
+  btn.addEventListener('click', () => {
+    const open = panel.hasAttribute('hidden');
+    panel.toggleAttribute('hidden', !open);
+    btn.setAttribute('aria-expanded', open);
+  });
+})();
 </script>
 </body>
 </html>
