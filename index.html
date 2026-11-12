@@ -3,8 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LeonXLab — Software & Automation Engineer</title>
-<meta name="description" content="Leonard Manurung — Software & Automation Engineer. Building scalable backend systems, autonomous AI agents, and secure workflow automation.">
+<title>LeonXLab — Leonard Manurung | Software & Automation Engineer</title>
+<meta name="description" content="LeonXLab (Leonard Manurung) — Software & Automation Engineer, Bekasi. leonxlab.digital kini berganti identitas menjadi leonxlab.com. Backend, AI agent, otomasi.">
+<meta name="author" content="Leonard Manurung">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#f7f6f3">
+<link rel="canonical" href="https://leonxlab.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LeonXLab">
+<meta property="og:url" content="https://leonxlab.com/">
+<meta property="og:title" content="LeonXLab — Leonard Manurung | Software & Automation Engineer">
+<meta property="og:description" content="LeonXLab (Leonard Manurung) — Software & Automation Engineer, Bekasi. leonxlab.digital kini berganti identitas menjadi leonxlab.com. Backend, AI agent, otomasi.">
+<meta property="og:image" content="https://leonxlab.app/logo.png">
+<meta property="og:image:alt" content="Logo LeonXLab">
+<meta property="og:locale" content="id_ID">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeonXLab — Leonard Manurung | Software & Automation Engineer">
+<meta name="twitter:description" content="LeonXLab (Leonard Manurung) — Software & Automation Engineer in Bekasi, Indonesia. leonxlab.digital is now leonxlab.com. Backend systems, AI agents, automation.">
+<meta name="twitter:image" content="https://leonxlab.app/logo.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://leonxlab.com/#website",
+      "url": "https://leonxlab.com/",
+      "name": "LeonXLab",
+      "alternateName": [
+        "LeonXLab Digital",
+        "leonxlab.digital"
+      ],
+      "description": "Portofolio Leonard Manurung, Software & Automation Engineer. Sebelumnya leonxlab.digital, kini berganti identitas menjadi leonxlab.com.",
+      "inLanguage": [
+        "id",
+        "en",
+        "zh-Hans"
+      ],
+      "publisher": {
+        "@id": "https://leonxlab.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://leonxlab.com/#organization",
+      "name": "LeonXLab",
+      "alternateName": [
+        "LeonXLab Digital",
+        "leonxlab.digital"
+      ],
+      "url": "https://leonxlab.com/",
+      "logo": "https://leonxlab.app/logo.png",
+      "email": "business@leonxlab.com",
+      "description": "LeonXLab sebelumnya beralamat di leonxlab.digital dan kini berganti identitas menjadi leonxlab.com.",
+      "founder": {
+        "@id": "https://leonxlab.com/#person"
+      },
+      "sameAs": [
+        "https://leonxlab.app",
+        "https://lxl.web.id"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://leonxlab.com/#person",
+      "name": "Leonard Manurung",
+      "jobTitle": "Software & Automation Engineer",
+      "url": "https://leonxlab.com/",
+      "email": "business@leonxlab.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bekasi",
+        "addressCountry": "ID"
+      },
+      "worksFor": {
+        "@id": "https://leonxlab.com/#organization"
+      },
+      "knowsAbout": [
+        "Backend development",
+        "FastAPI",
+        "Next.js",
+        "React",
+        "AI agents",
+        "Local LLM",
+        "LoRA fine-tuning",
+        "Workflow automation",
+        "PostgreSQL"
+      ],
+      "sameAs": [
+        "https://leonxlab.app",
+        "https://lxl.web.id"
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -86,6 +187,54 @@ section{padding:112px 0;position:relative}
   color:var(--ink);
 }
 .section-desc{font-size:1rem;color:var(--ink3);line-height:1.75;max-width:460px;justify-self:end}
+
+/* ===== DOMAIN NOTICE (inline di hero) ===== */
+.domain-notice{
+  position:relative;margin-top:22px;
+  background:var(--dark);color:#fff;
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:max-height .35s ease,opacity .3s ease,margin-top .35s ease;
+}
+.domain-notice::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--blue),var(--orange));
+}
+.domain-notice.closing{max-height:0 !important;opacity:0;margin-top:0}
+.domain-notice-inner{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+  padding:14px 12px 14px 20px;
+}
+.db-main{min-width:0;display:flex;flex-direction:column;gap:4px}
+.db-title{
+  display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;
+  font-family:var(--font-mono);font-size:0.78rem;font-weight:500;line-height:1.5;
+}
+.db-old{
+  color:rgba(255,255,255,0.5);
+  text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:2px;
+  transition:text-decoration-color .35s ease,color .35s ease;
+}
+.domain-notice.db-anim .db-old:not(.struck){text-decoration-color:transparent;color:rgba(255,255,255,0.8)}
+.db-arrow{color:#7ea2ff;opacity:1;transition:opacity .3s ease}
+.db-new{color:#fff;font-weight:700}
+.db-ok{color:#86d993;opacity:1;transition:opacity .3s ease}
+.domain-notice.db-anim .db-arrow:not(.show),
+.domain-notice.db-anim .db-ok:not(.show){opacity:0}
+.db-text{font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.72)}
+.db-text code{
+  font-family:var(--font-mono);font-size:0.77rem;
+  background:rgba(255,255,255,0.1);color:#fff;
+  padding:1px 6px;border-radius:5px;white-space:nowrap;
+}
+.db-close{
+  flex-shrink:0;width:30px;height:30px;border-radius:8px;
+  display:grid;place-items:center;border:none;cursor:pointer;
+  background:transparent;color:rgba(255,255,255,0.6);font-size:0.9rem;
+  transition:background .2s,color .2s;
+}
+.db-close:hover{background:rgba(255,255,255,0.12);color:#fff}
+.db-close:focus-visible{outline:2px solid #7ea2ff;outline-offset:2px}
 
 /* ===== NAV ===== */
 nav{
@@ -567,6 +716,9 @@ footer{padding:28px 0 40px}
   .contact-card{padding:44px 22px;border-radius:22px}
   .platform-head{flex-direction:column}
   .footer-inner{flex-direction:column;align-items:flex-start}
+  .db-title{font-size:0.74rem}
+  .db-text{font-size:0.76rem}
+  .db-text code{font-size:0.72rem}
 }
 
 /* ===== ACCESSIBILITY ===== */
@@ -671,6 +823,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       </p>
 
       <div class="hero-actions">
+        <a href="#timeline" class="btn btn-secondary">
+          <i class="fa-solid fa-route"></i>
+          <span data-lang="id">Journey</span><span data-lang="en">Journey</span><span data-lang="zh">旅程</span>
+        </a>
         <a href="#products" class="btn btn-primary">
           <span data-lang="id">Lihat Produk</span><span data-lang="en">View Products</span><span data-lang="zh">查看产品</span>
           <i class="fa-solid fa-arrow-right"></i>
@@ -685,6 +841,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
         <span><i class="fa-solid fa-location-dot"></i> Bekasi, Indonesia</span>
         <a href="https://leonxlab.app" target="_blank" rel="noopener"><i class="fa-solid fa-store"></i> leonxlab.app</a>
         <a href="https://lxl.web.id" target="_blank" rel="noopener"><i class="fa-solid fa-server"></i> lxl.web.id</a>
+      </div>
+
+      <!-- DOMAIN NOTICE -->
+      <div class="domain-notice" id="domainNotice" role="status">
+        <div class="domain-notice-inner">
+          <div class="db-main">
+            <div class="db-title mono">
+              <s class="db-old" id="dbOld">leonxlab.digital</s>
+              <span class="db-arrow" id="dbArrow">&rarr;</span>
+              <strong class="db-new" id="dbNew">leonxlab.com</strong>
+              <span class="db-ok" id="dbOk">&#10003;</span>
+            </div>
+            <p class="db-text">
+              <span data-lang="id">Identitas baru: alamat standar global yang lebih profesional dan mudah diingat, siap untuk kolaborasi lintas negara. Email bisnis kini <code class="mono">business@leonxlab.com</code>.</span>
+              <span data-lang="en">New identity: a global-standard address that is more professional and easier to remember, built for cross-border collaboration. Business email is now <code class="mono">business@leonxlab.com</code>.</span>
+              <span data-lang="zh">全新身份：全球通用、更专业易记的地址，更适合跨国合作。商务邮箱现为 <code class="mono">business@leonxlab.com</code>。</span>
+            </p>
+          </div>
+          <button class="db-close" id="dbClose" type="button" aria-label="Tutup / Close / 关闭">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -1206,7 +1384,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
         </div>
       </article>
 
-
       <article class="card product-card reveal reveal-delay-2">
         <div class="product-thumb">
           <img src="jb-bg.png" alt="Jepret Bestie" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'product-thumb-placeholder\'><i class=\'fa-solid fa-camera\' style=\'color:#c2185b\'></i></div>'">
@@ -1273,9 +1450,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
             <span data-lang="en">Create Professional Presentations in Seconds. Convert raw text ideas or PDF/Word documents into structured PowerPoint presentations with locally encrypted AI.</span>
             <span data-lang="zh">秒速创建专业演示文稿。将原始文字构想或PDF/Word文档转换为结构化PowerPoint演示，配备本地加密AI。</span>
           </div>
-          <div class="product-footer">
-            <a class="product-link" href="product/pptex/"><span data-lang="id">Dokumentasi</span><span data-lang="en">Docs</span><span data-lang="zh">文档</span> <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
+          <!-- Tombol Dokumentasi dihapus sementara (halaman docs sedang bug). Footer dibiarkan kosong supaya garis sejajar dengan kartu di sebelahnya. -->
+          <div class="product-footer"></div>
         </div>
       </article>
 
@@ -1477,10 +1653,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
         </p>
       </div>
       <div class="contact-links">
-        <a href="mailto:business@leonxlab.digital" class="contact-link primary">
+        <a href="mailto:business@leonxlab.com" class="contact-link primary">
           <span class="ico"><i class="fa-solid fa-envelope"></i></span>
           <span class="txt">
-            <strong>business@leonxlab.digital</strong>
+            <strong>business@leonxlab.com</strong>
             <small><span data-lang="id">Email bisnis</span><span data-lang="en">Business email</span><span data-lang="zh">商务邮箱</span></small>
           </span>
           <i class="fa-solid fa-arrow-right arrow"></i>
@@ -1511,10 +1687,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   <div class="wrap footer-inner">
     <div>© <span id="year">2026</span> LeonXLab · Leonard Manurung · Bekasi, Indonesia</div>
     <div class="footer-links">
-      <a href="https://leonxlab.digital" target="_blank" rel="noopener">leonxlab.digital</a>
+      <a href="https://leonxlab.com" target="_blank" rel="noopener">leonxlab.com</a>
       <a href="https://leonxlab.app" target="_blank" rel="noopener">leonxlab.app</a>
       <a href="https://lxl.web.id" target="_blank" rel="noopener">lxl.web.id</a>
-      <a href="mailto:business@leonxlab.digital"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="mailto:business@leonxlab.com"><i class="fa-solid fa-envelope"></i> Email</a>
     </div>
   </div>
 </footer>
@@ -1544,6 +1720,76 @@ if (saved) {
   else if (browserLang.startsWith('en')) setLang('en');
   else setLang('id');
 }
+
+// ===== DOMAIN NOTICE =====
+(function initDomainNotice() {
+  const notice = document.getElementById('domainNotice');
+  if (!notice) return;
+
+  let dismissed = false;
+  try { dismissed = localStorage.getItem('leonxlab-domain-notice') === 'closed'; } catch (e) {}
+  if (dismissed) { notice.remove(); return; }
+
+  // Tombol tutup
+  document.getElementById('dbClose').addEventListener('click', () => {
+    try { localStorage.setItem('leonxlab-domain-notice', 'closed'); } catch (e) {}
+    notice.style.maxHeight = notice.offsetHeight + 'px';
+    void notice.offsetHeight; // reflow agar transisi berjalan
+    notice.classList.add('closing');
+    setTimeout(() => notice.remove(), 380);
+  });
+
+  // Efek ketik: domain lama -> dicoret -> panah -> domain baru -> centang
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  const oldEl = document.getElementById('dbOld');
+  const newEl = document.getElementById('dbNew');
+  const arrow = document.getElementById('dbArrow');
+  const ok = document.getElementById('dbOk');
+  const oldText = oldEl.textContent;
+  const newText = newEl.textContent;
+
+  // Kunci tinggi agar tidak melompat saat teks diketik
+  notice.classList.add('db-anim');
+  oldEl.textContent = '';
+  newEl.textContent = '';
+
+  function type(el, text, done) {
+    let i = 0;
+    (function step() {
+      i++;
+      el.textContent = text.slice(0, i);
+      if (i < text.length) setTimeout(step, 38);
+      else if (done) done();
+    })();
+  }
+
+  // Mulai saat kartu terlihat di layar
+  function start() {
+    setTimeout(() => {
+      type(oldEl, oldText, () => {
+        setTimeout(() => {
+          oldEl.classList.add('struck');
+          setTimeout(() => {
+            arrow.classList.add('show');
+            type(newEl, newText, () => {
+              setTimeout(() => ok.classList.add('show'), 150);
+            });
+          }, 350);
+        }, 250);
+      });
+    }, 300);
+  }
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) { io.disconnect(); start(); }
+    }, { threshold: 0.4 });
+    io.observe(notice);
+  } else {
+    start();
+  }
+})();
 
 // ===== MOBILE MENU =====
 const hamburger = document.getElementById('hamburger');
