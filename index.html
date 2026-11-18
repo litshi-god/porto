@@ -63,7 +63,11 @@
       ],
       "url": "https://leonxlab.com/",
       "logo": "https://leonxlab.app/logo.png",
-      "email": "business@leonxlab.com",
+      "email": "company@leonxlab.com",
+      "contactPoint": [
+        { "@type": "ContactPoint", "contactType": "customer support", "email": "company@leonxlab.com" },
+        { "@type": "ContactPoint", "contactType": "sales", "email": "business@leonxlab.com" }
+      ],
       "description": "LeonXLab sebelumnya beralamat di leonxlab.digital dan kini berganti identitas menjadi leonxlab.com.",
       "founder": {
         "@id": "https://leonxlab.com/#person"
@@ -687,11 +691,25 @@ img.platform-logo{object-fit:cover;background:var(--dark)}
 .contact-link .arrow{font-size:0.8rem;opacity:.6}
 
 /* ===== FOOTER ===== */
-footer{padding:28px 0 40px}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:0.82rem;color:var(--ink3)}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap}
-.footer-links a{text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--ink)}
+footer{padding:64px 0 32px;border-top:1px solid var(--line);margin-top:48px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:40px}
+.footer-name{font-family:var(--font-display);font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;color:var(--ink)}
+.footer-co{font-size:0.82rem;font-weight:600;color:var(--ink2);margin-top:2px}
+.footer-about{font-size:0.84rem;color:var(--ink3);line-height:1.7;margin-top:14px;max-width:320px}
+.footer-loc{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.82rem;color:var(--ink3)}
+.footer-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);margin-bottom:16px}
+.footer-col ul{list-style:none;display:grid;gap:10px}
+.footer-col a{font-size:0.86rem;color:var(--ink3);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:var(--blue)}
+.footer-col small{display:block;font-size:0.72rem;color:var(--ink3);opacity:.8}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding-top:24px;border-top:1px solid var(--line);
+  font-size:0.8rem;color:var(--ink3);
+}
+.footer-bottom a{text-decoration:none;transition:color .2s}
+.footer-bottom a:hover{color:var(--blue)}
+.footer-legal{display:flex;gap:18px;flex-wrap:wrap}
 
 /* ===== WORK (hidden section, kept for later) ===== */
 #work{display:none}
@@ -736,6 +754,8 @@ footer{padding:28px 0 40px}
   .timeline-item::before{left:-28px;width:14px;height:14px}
   .timeline-sub-item{grid-template-columns:1fr;gap:4px}
   .platform-head,.platform-body{padding-left:22px;padding-right:22px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
 }
 @media(max-width:600px){
   .nav-right .nav-cta{display:none}
@@ -750,7 +770,8 @@ footer{padding:28px 0 40px}
   .metric-item{padding:28px 20px}
   .contact-card{padding:44px 22px;border-radius:22px}
   .platform-head{flex-direction:column}
-  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
   .db-title{font-size:0.74rem}
   .db-text{font-size:0.76rem}
   .db-text code{font-size:0.72rem}
@@ -861,7 +882,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       <div class="hero-actions">
         <a href="#timeline" class="btn btn-secondary">
           <i class="fa-solid fa-route"></i>
-          <span data-lang="id">Journey</span><span data-lang="en">Journey</span><span data-lang="zh">旅程</span>
+          <span data-lang="id">Perjalanan</span><span data-lang="en">Journey</span><span data-lang="zh">旅程</span>
         </a>
         <a href="#products" class="btn btn-primary">
           <span data-lang="id">Lihat Produk</span><span data-lang="en">View Products</span><span data-lang="zh">查看产品</span>
@@ -1608,9 +1629,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
             </div>
             <div class="timeline-company">Boccard Indonesia</div>
           </div>
-          <div class="timeline-date">November 2026</div>
+          <div class="timeline-date"><span data-lang="id">November 2026</span><span data-lang="en">November 2026</span><span data-lang="zh">2026年11月</span></div>
         </div>
-        <div class="timeline-sub-title">AgitatorRV | Legacy Software Modernization</div>
+        <div class="timeline-sub-title">AgitatorRV | <span data-lang="id">Modernisasi Software Legacy</span><span data-lang="en">Legacy Software Modernization</span><span data-lang="zh">旧版软件现代化</span></div>
         <div class="timeline-desc">
           <span data-lang="id">Memodernisasi program DSTC Agitator lama yang dibangun dengan QuickBASIC menjadi aplikasi desktop Windows modern menggunakan Visual Basic .NET. Mengembangkan modul perhitungan engineering untuk daya agitator, pemilihan motor, dan pengecekan poros, serta manajemen proyek, pemulihan otomatis, pelaporan, dan fitur pembaruan aplikasi.</span>
           <span data-lang="en">Modernized the legacy DSTC Agitator program, originally built with QuickBASIC, into a modern Windows desktop application using Visual Basic .NET. Developed engineering calculation modules for agitator power, motor selection, and shaft checking, along with project management, automated recovery, reporting, and application update functionality.</span>
@@ -1629,8 +1650,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
             </div>
             <div class="timeline-company">Boccard Indonesia</div>
           </div>
-          <div class="timeline-date">September 2026</div>
+          <div class="timeline-date"><span data-lang="id">September 2026</span><span data-lang="en">September 2026</span><span data-lang="zh">2026年9月</span></div>
         </div>
+        <div class="timeline-sub-title">Project Tracker</div>
         <div class="timeline-desc">
           <span data-lang="id">Mengembangkan Project Tracker berbasis web menggunakan Next.js untuk mengelola proyek, pengguna, penugasan, dan catatan jam kerja harian. Menerapkan alur kerja berbasis peran untuk Admin dan User, integrasi Supabase Authentication dan PostgreSQL, ekspor Excel, autentikasi Microsoft, serta database keep-alive otomatis menggunakan Vercel Cron.</span>
           <span data-lang="en">Developed a web-based Project Tracker using Next.js to manage projects, users, assignments, and daily work-hour records. Implemented role-based workflows for Admin and User, Supabase Authentication and PostgreSQL integration, Excel export, Microsoft authentication, and automated database keep-alive using Vercel Cron.</span>
@@ -1649,11 +1671,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
             </div>
             <div class="timeline-company">Boccard Indonesia</div>
           </div>
-          <div class="timeline-date">June 2025 — July 2026</div>
+          <div class="timeline-date"><span data-lang="id">Juni 2025 — Juli 2026</span><span data-lang="en">June 2025 — July 2026</span><span data-lang="zh">2025年6月 — 2026年7月</span></div>
         </div>
         <div class="timeline-sub">
           <div class="timeline-sub-item">
-            <div class="timeline-sub-date">July 2026</div>
+            <div class="timeline-sub-date"><span data-lang="id">Juli 2026</span><span data-lang="en">July 2026</span><span data-lang="zh">2026年7月</span></div>
             <div>
               <div class="timeline-sub-title">
                 <span data-lang="id">Dashboard Data Excel Real-time</span>
@@ -1668,7 +1690,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
             </div>
           </div>
           <div class="timeline-sub-item">
-            <div class="timeline-sub-date">January 2026</div>
+            <div class="timeline-sub-date"><span data-lang="id">Januari 2026</span><span data-lang="en">January 2026</span><span data-lang="zh">2026年1月</span></div>
             <div>
               <div class="timeline-sub-title">
                 <span data-lang="id">AI Agent On-Premises</span>
@@ -1683,7 +1705,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
             </div>
           </div>
           <div class="timeline-sub-item">
-            <div class="timeline-sub-date">June 2025</div>
+            <div class="timeline-sub-date"><span data-lang="id">Juni 2025</span><span data-lang="en">June 2025</span><span data-lang="zh">2025年6月</span></div>
             <div>
               <div class="timeline-sub-title">
                 <span data-lang="id">Otomasi Industri &amp; Pelaporan</span>
@@ -1708,7 +1730,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
             </div>
             <div class="timeline-company">Freelance</div>
           </div>
-          <div class="timeline-date">June 2020 — <span data-lang="id">Sekarang</span><span data-lang="en">Present</span><span data-lang="zh">至今</span></div>
+          <div class="timeline-date"><span data-lang="id">Juni 2020 — Sekarang</span><span data-lang="en">June 2020 — Present</span><span data-lang="zh">2020年6月 — 至今</span></div>
         </div>
         <div class="timeline-desc">
           <span data-lang="id">Membangun berbagai sistem web yang aman dan arsitektur backend untuk UMKM, event nasional, dan bisnis menengah. Menerjemahkan kebutuhan bisnis menjadi solusi teknis yang fungsional dan mudah dioperasikan.</span>
@@ -1732,7 +1754,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
               </small>
             </div>
           </div>
-          <div class="timeline-date">January 2021 — March 2023</div>
+          <div class="timeline-date"><span data-lang="id">Januari 2021 — Maret 2023</span><span data-lang="en">January 2021 — March 2023</span><span data-lang="zh">2021年1月 — 2023年3月</span></div>
         </div>
         <div class="timeline-desc">
           <span data-lang="id">Mengoptimalkan source code untuk menghilangkan lag dan menjaga performa stabil bagi banyak pemain secara bersamaan. Membangun mekanik game yang logis dan realistis, serta mengelola stabilitas sistem dan deployment agar server tetap online tanpa kendala.</span>
@@ -1796,13 +1818,53 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
 <!-- FOOTER -->
 <footer>
-  <div class="wrap footer-inner">
-    <div>© <span id="year">2026</span> LeonXLab · PT. Luminous Leon Labs · Leonard Manurung · Bekasi, Indonesia</div>
-    <div class="footer-links">
-      <a href="https://leonxlab.com" target="_blank" rel="noopener">leonxlab.com</a>
-      <a href="https://leonxlab.app" target="_blank" rel="noopener">leonxlab.app</a>
-      <a href="https://lxl.web.id" target="_blank" rel="noopener">lxl.web.id</a>
-      <a href="mailto:business@leonxlab.com"><i class="fa-solid fa-envelope"></i> Email</a>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-name">LeonXLab</div>
+        <div class="footer-co">PT. Luminous Leon Labs</div>
+        <p class="footer-about">
+          <span data-lang="id">Sistem backend, agen AI, dan otomasi alur kerja — dari prototipe hingga produksi.</span><span data-lang="en">Backend systems, AI agents, and workflow automation — from prototype to production.</span><span data-lang="zh">后端系统、AI代理与工作流自动化——从原型到生产。</span>
+        </p>
+        <div class="footer-loc"><i class="fa-solid fa-location-dot"></i> Bekasi, Indonesia</div>
+      </div>
+
+      <div class="footer-col">
+        <h4><span data-lang="id">Navigasi</span><span data-lang="en">Navigate</span><span data-lang="zh">导航</span></h4>
+        <ul>
+          <li><a href="#services"><span data-lang="id">Layanan</span><span data-lang="en">Services</span><span data-lang="zh">服务</span></a></li>
+          <li><a href="#platform"><span data-lang="id">Platform</span><span data-lang="en">Platform</span><span data-lang="zh">平台</span></a></li>
+          <li><a href="#products"><span data-lang="id">Produk</span><span data-lang="en">Products</span><span data-lang="zh">产品</span></a></li>
+          <li><a href="#timeline"><span data-lang="id">Karier</span><span data-lang="en">Career</span><span data-lang="zh">经历</span></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><span data-lang="id">Legal</span><span data-lang="en">Legal</span><span data-lang="zh">法律信息</span></h4>
+        <ul>
+          <li><a href="legal.html#privacy"><span data-lang="id">Kebijakan Privasi</span><span data-lang="en">Privacy Policy</span><span data-lang="zh">隐私政策</span></a></li>
+          <li><a href="legal.html#terms"><span data-lang="id">Syarat &amp; Ketentuan</span><span data-lang="en">Terms of Use</span><span data-lang="zh">使用条款</span></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><span data-lang="id">Kontak</span><span data-lang="en">Contact</span><span data-lang="zh">联系</span></h4>
+        <ul>
+          <li><a href="mailto:company@leonxlab.com">company@leonxlab.com<small><span data-lang="id">Email perusahaan</span><span data-lang="en">Company email</span><span data-lang="zh">公司邮箱</span></small></a></li>
+          <li><a href="mailto:business@leonxlab.com">business@leonxlab.com<small><span data-lang="id">Email bisnis &amp; kolaborasi</span><span data-lang="en">Business &amp; collaboration</span><span data-lang="zh">商务与合作</span></small></a></li>
+          <li><a href="https://leonxlab.app" target="_blank" rel="noopener">leonxlab.app</a></li>
+          <li><a href="https://lxl.web.id" target="_blank" rel="noopener">lxl.web.id</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© <span id="year">2026</span> PT. Luminous Leon Labs. <span data-lang="id">Seluruh hak dilindungi.</span><span data-lang="en">All rights reserved.</span><span data-lang="zh">保留所有权利。</span></div>
+      <div class="footer-legal">
+        <a href="legal.html#privacy"><span data-lang="id">Privasi</span><span data-lang="en">Privacy</span><span data-lang="zh">隐私</span></a>
+        <a href="legal.html#terms"><span data-lang="id">Ketentuan</span><span data-lang="en">Terms</span><span data-lang="zh">条款</span></a>
+        <a href="https://leonxlab.com" target="_blank" rel="noopener">leonxlab.com</a>
+      </div>
     </div>
   </div>
 </footer>
